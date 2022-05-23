@@ -8,27 +8,38 @@ function reducer(listBooks, action) {
     case "charge":
       return [...action.payload.list]
     case "add":
-      return [...listBooks, action.payload.data]
-      case "delete":
-        return listBooks.filter((element)=>{
-          console.log(action.payload.id,":action.payload.id.",element._id,":element._id")
-          return element._id!=action.payload.id
-        })
+      return [action.payload.data, ...listBooks]
+    case "delete":
+      return listBooks.filter((element) => {
+        return element._id !== action.payload.id;
+      })
+    case "upDate":
+      return listBooks.map((element) => {
+        if(element._id===action.payload.id){
+          console.log("lo que llega: ","id: ",action.payload.id, "title: ",action.payload.title, "description: ",action.payload.description,"image: ",action.payload.image)
+          element.title=action.payload.title;
+          element.description=action.payload.description;
+          element.image=action.payload.image;
+        }
+        return element;
+      })
   }
 }
 export default function Home({ list }) {
   const [listBooks, dispatch] = useReducer(reducer, []);
   useEffect(() => {
-    dispatch({type:"charge",payload:{list}})
+    dispatch({ type: "charge", payload: { list } })
   }, [])
 
   return (
     <div className={styles.Home}>
-      <AddBookCard dispatch={dispatch}/>
+      <div className={styles.addSection}>
+        <AddBookCard dispatch={dispatch} />
+      </div>
       <div className={styles.dashBoard}>
-      {listBooks?.map((element) => {
-        return <BookCard key={element._id} title={element.title} description={element.description} image={element.image} id={element._id} dispatch={dispatch}/>
-      })}
+        {listBooks?.map((element) => {
+          return <BookCard key={element?._id} title={element?.title} description={element?.description} image={element?.image} id={element?._id} dispatch={dispatch} />
+        })}
       </div>
     </div>
   )

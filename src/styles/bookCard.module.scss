@@ -1,31 +1,89 @@
-.card{
+.card {
     padding: 1rem;
-    background: linear-gradient(to left,#1946FD,#AC11F0,#ED0293,#FF3938);
+    background: linear-gradient(to left, #1946fd, #ac11f0, #ed0293, #ff3938);
     border-radius: 5px;
     padding: 1rem;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
 }
-.left{
+.left {
     display: grid;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
-.rigth{
+.rigth {
     position: relative;
 }
-.button{
-    background-color: #9F9FFF;
+.button {
+    background-color: #9f9fff;
     border-radius: 5px;
-    border:none;
+    border: none;
     height: fit-content;
     padding: 1rem;
     font-weight: bolder;
     font-size: 1rem;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
 }
-.buttons{
+.buttons {
     display: flex;
-    gap:1rem;
+    gap: 1rem;
+}
+.input {
+    color: black;
+    border-radius: 5px;
+    border: none;
+    height: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+}
+.textarea {
+    color: black;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    outline: none;
+}
+.plusConteiner{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border:solid;
+    border-color: black;
+    border-style: dashed;
+    padding: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.plus{
+    width: 20rem
+}
+.rigthOn{
+    position: relative;
+}
+.button:hover{
+    animation: shiggle .5s linear forwards;
+}
+@keyframes shiggle {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    25%{
+        transform: rotateZ(5deg);
+    }  
+    75%{
+        transform: rotateZ(-5deg);
+    }   
+    100%{
+        transform: rotateZ(0deg);
+    }
 }

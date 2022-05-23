@@ -26,7 +26,7 @@ export default async function (req, res) {
             try{
                 const bookk= await book.findByIdAndDelete(id);
                 if(!bookk) return res.status(404).json({msg:"task not found"})
-                res.status(204).json("ok");
+                res.status(200).json("ok");
             }catch(err){
                 res.status(400).json({msg:err.message});
             }
