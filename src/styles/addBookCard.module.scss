@@ -1,0 +1,89 @@
+.card{
+    height: 20rem;
+    width: 25rem;
+    background: linear-gradient(to left,#1946FD,#AC11F0,#ED0293,#FF3938);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    gap: 1rem;
+}
+.rigth{
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+.left{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.plus{
+    width: 20rem
+}
+.titleInput{
+    color: black;
+    border-radius: 5px;
+    border:none;
+    height: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+}
+.descriptionInput{
+color: black;
+border-radius: 5px;
+border:none;
+width: 100%;
+height: 100%;
+padding: 1rem;
+outline: none;
+}
+.addImage{
+    position: absolute;
+}
+.plusConteiner{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border:solid;
+    border-color: black;
+    border-style: dashed;
+    padding: 1rem;
+    border-radius: 50%;
+}
+.imageAdd{
+    width: 100%;
+    height: 100%;
+}
+.send{
+    background-color: #9F9FFF;
+    border-radius: 5px;
+    border:none;
+    height: fit-content;
+    padding: 1rem;
+    width: 6rem;
+    font-weight: bolder;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+}
+.send:hover{
+    animation: shiggle .5s linear forwards;
+}
+@keyframes shiggle {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    25%{
+        transform: rotateZ(5deg);
+    }  
+    75%{
+        transform: rotateZ(-5deg);
+    }   
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
