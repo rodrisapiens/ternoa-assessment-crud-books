@@ -70,7 +70,7 @@ function AddBookCard({ dispatch }) {
                 <div className={styles.rigth}>
                     <input type={"text"} id="title" placeholder={"enter a title"} className={styles.titleInput} value={title} onChange={(e) => { setTitle(e.currentTarget.value) }}></input>
                     <textarea id='description' placeholder='enter a description' className={styles.descriptionInput} value={description} onChange={(e) => { setDescription(e.currentTarget.value) }}></textarea>
-                    <button className={styles.send} onClick={handleSend}>SEND</button>
+                    <button className={styles.send} onClick={handleSend}>Add Book!</button>
                 </div>
             </div>
             <input
