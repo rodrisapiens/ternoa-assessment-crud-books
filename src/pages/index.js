@@ -33,6 +33,10 @@ export default function Home({ list }) {
 
   return (
     <div className={styles.Home}>
+      <div className={styles.header}>
+      <h1 className={styles.title}>A libray for Ternoa</h1>
+      <h3 className={styles.subtitle}>by Rodrigo Niveyro</h3>
+      </div>
       <div className={styles.addSection}>
         <AddBookCard dispatch={dispatch} />
       </div>

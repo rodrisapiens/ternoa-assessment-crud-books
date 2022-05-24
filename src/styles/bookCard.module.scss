@@ -25,6 +25,7 @@
     font-weight: bolder;
     font-size: 1rem;
     letter-spacing: 0.1rem;
+    cursor: pointer;
 }
 .buttons {
     display: flex;
@@ -63,6 +64,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 2;
+    cursor: pointer;
 }
 .plus{
     width: 20rem

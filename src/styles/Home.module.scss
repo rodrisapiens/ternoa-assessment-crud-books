@@ -21,3 +21,22 @@ gap: 1rem;
     grid-template-columns: 1fr 1fr 1fr;
     gap:1rem;
 }
+.title{
+    text-align: center;
+}
+.header{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.subtitle{
+    text-align: center;
+}
+@media all and (max-width: 600px) {
+    .dashBoard{
+        grid-template-columns: 1fr;
+    }
+    .addSection{
+        grid-template-columns: 1fr;
+    }
+}

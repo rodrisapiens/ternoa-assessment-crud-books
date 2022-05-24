@@ -2,7 +2,7 @@ import styles from "../styles/addBookCard.module.scss"
 import Plus from "../images/plus-svgrepo-com.svg"
 import Image from 'next/image'
 import { useState, useEffect, useRef } from "react"
-function AddBookCard({dispatch}) {
+function AddBookCard({ dispatch }) {
     const [image, setImage] = useState()
     const [title, setTitle] = useState();
     const [description, setDescription] = useState();
@@ -33,19 +33,28 @@ function AddBookCard({dispatch}) {
         fileInputRef.current.click();
     }
     async function handleSend() {
-        const response = await fetch("/api/books", {
-            method: "POST",
-            body: JSON.stringify({ "title": title, "description": description, "image": preview }),
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-        const data = await response.json();
-        console.log(data);
-        dispatch({type:"add",payload:{data}})
-        setTitle("");
-        setDescription("");
-        setImage(null);
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        console.log("title", title);
+        if (title !== "" && description !== "" && preview) {
+            const response = await fetch("/api/books", {
+                method: "POST",
+                body: JSON.stringify({ "title": title, "description": description, "image": preview }),
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            })
+            const data = await response.json();
+            console.log(data);
+            dispatch({ type: "add", payload: { data } })
+            setTitle("");
+            setDescription("");
+            setImage(null);
+        }
+        else {
+            alert("All spaces must be filled to send a book")
+            return
+        }
     }
     return (
         <>
